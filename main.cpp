@@ -173,59 +173,59 @@ struct CarWash //2)
 
 
 /*
-1)
+1)Synth
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)synthesis type
+    2)number of filters
+    3)number of voices
+    4)number of modulators
+    5)price
 3 things it can do:
-    1)
-    2)
-    3)
+    1)generate sound
+    2)bring joy
+    3)cost money
  */
 
 /*
-2)
+2)light
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)temperature
+    2)luminosity
+    3)electrical consumption
+    4)size
+    5)price
 3 things it can do:
-    1)
-    2)
-    3)
+    1)turn on
+    2)set the mood
+    3)elevate the production's quality
  */
 
 /*
-3)
+3)swiss army knife
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)weight
+    2)size
+    3)price
+    4)saw
+    5)pliers
 3 things it can do:
-    1)
-    2)
-    3)
+    1)cut
+    2)open
+    3)unscrew
  */
 
 /*
-4)
+4)video mixer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)t bar
+    2)faders
+    3)inputs
+    4)effects
+    5)outputs
 3 things it can do:
-    1)
-    2)
-    3)
+    1)mix
+    2)embed
+    3)modify
  */
 
 /*
