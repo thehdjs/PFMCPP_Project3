@@ -299,17 +299,17 @@ struct CarWash //2)
  */
 
 /*
-10)
+10)synthesizer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)oscillators
+    2)wave shapers
+    3)filters
+    4)modulators
+    5)amplifiers
 3 things it can do:
-    1)
-    2)
-    3)
+    1)basic sounds
+    2)pads
+    3)drums
  */
 
 #include <iostream>
