@@ -206,8 +206,8 @@ struct CarWash //2)
     1)weight
     2)size
     3)price
-    4)saw
-    5)pliers
+    4)number of cutting tools
+    5)number of grabbing tools
 3 things it can do:
     1)cut
     2)open
@@ -224,7 +224,7 @@ struct CarWash //2)
     5)outputs
 3 things it can do:
     1)mix
-    2)embed
+    2)fade to black
     3)modify
  */
 
