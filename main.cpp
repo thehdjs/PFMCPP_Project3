@@ -173,17 +173,17 @@ struct CarWash //2)
 
 
 /*
-1)Synth
+1)knife
 5 properties:
-    1)synthesis type
-    2)number of filters
-    3)number of voices
-    4)number of modulators
+    1)pointiness
+    2)sharpness
+    3)thickness
+    4)length
     5)price
 3 things it can do:
-    1)generate sound
-    2)bring joy
-    3)cost money
+    1)cut
+    2)stab
+    3)unscrew
  */
 
 /*
@@ -217,7 +217,7 @@ struct CarWash //2)
 /*
 4)video mixer
 5 properties:
-    1)t bar
+    1)t bar position
     2)faders
     3)inputs
     4)effects
@@ -229,83 +229,83 @@ struct CarWash //2)
  */
 
 /*
-5)
+5)oscillators
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)pitch
+    2)wave form
+    3)phase
+    4)timbre
+    5)amplitude
 3 things it can do:
-    1)
-    2)
-    3)
+    1)generate audio
+    2)reset phase
+    3)generate modulation
  */
 
 /*
-6)
+6)wave shapers
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)threshold
+    2)amount
+    3)offset
+    4)feedback
+    5)control input
 3 things it can do:
-    1)
-    2)
-    3)
+    1)twist
+    2)reshape
+    3)distort
  */
 
 /*
-7)
+7)filters
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)frequency
+    2)resonance
+    3)type
+    4)caracter
+    5)drive
 3 things it can do:
-    1)
-    2)
-    3)
+    1)remove frequencies
+    2)ping
+    3)self oscillate
  */
 
 /*
-8)
+8)modulators
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)rate
+    2)depth
+    3)wave form
+    4)phase
+    5)polarity type
 3 things it can do:
-    1)
-    2)
-    3)
+    1)generate modulation
+    2)make sounds interesting
+    3)add groove
  */
 
 /*
-9)
+9)amplifiers
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)gain
+    2)linearity
+    3)thd
+    4)class type
+    5)caracter
 3 things it can do:
-    1)
-    2)
-    3)
+    1)amplify
+    2)distort
+    3)color
  */
 
 /*
 10)synthesizer
 5 properties:
-    1)Voice
-    2)AudioIn
-    3)AudioOut
-    4)NoteIn
-    5)NoteOut
+    1)oscillators
+    2)wave shapers
+    3)filters
+    4)modulators
+    5)amplifiers
 3 things it can do:
     1)basic sounds
     2)pads
