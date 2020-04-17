@@ -301,11 +301,11 @@ struct CarWash //2)
 /*
 10)synthesizer
 5 properties:
-    1)oscillators
-    2)wave shapers
-    3)filters
-    4)modulators
-    5)amplifiers
+    1)Voice
+    2)AudioIn
+    3)AudioOut
+    4)NoteIn
+    5)NoteOut
 3 things it can do:
     1)basic sounds
     2)pads
