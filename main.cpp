@@ -1,4 +1,4 @@
-/*
+ /*
 Project 3 - Part 1 / 5
 Video:  Chapter 2 Part 5
 User-Defined Types
@@ -171,7 +171,6 @@ struct CarWash //2)
     Car carBeingServiced;  
 };
 
-
 /*
 1)knife
 5 properties:
@@ -185,6 +184,35 @@ struct CarWash //2)
     2)stab
     3)unscrew
  */
+
+struct Knife 
+{
+    // angle of knife point in degrees
+    float pointiness = 0.85f; 
+    // smallest thickness in mm
+    float sharpness = 0.3f;
+    // biggest thickness
+    float thickness = 1.5f;
+    //length in mm
+    unsigned int length = 150;
+    //
+    float price = 75;
+    
+    struct Acut
+    {
+    float cutDepth = 10;
+    float cutLength = 50;
+
+    void hurt(int pain);
+    };
+
+    //cut
+    void cut(Acut prettyNastyCut);
+    //stab
+    void stab();
+    //unscrew
+    void unscrew();
+};
 
 /*
 2)light
@@ -200,6 +228,27 @@ struct CarWash //2)
     3)elevate the production's quality
  */
 
+struct Light
+{
+    //color temperature in Kelvin
+    int temperature = 2500;
+    //luminosity in Lumen
+    int luminosity = 1000;
+    //electrical consumption in Watts
+    int electricalConsumption = 500;
+    //size in mm²
+    float size = 25.3f;
+    //price
+    float price = 1000;
+
+    //turn on
+    bool turnOn();
+    //set the mood
+    void setTheMood();
+    //elevate the production's quality in %
+    float addedQuality();
+};
+
 /*
 3)swiss army knife
 5 properties:
@@ -213,6 +262,27 @@ struct CarWash //2)
     2)open
     3)unscrew
  */
+
+struct SwissArmyKnife
+{
+    //weight in g
+    float weight = 351.3f;
+    //size in mm
+    float size = 100;
+    //price
+    float price = 59.99f;
+    //number of cutting tools
+    int numberOfCuttingTools = 3;
+    //number of grabbing tools
+    int numberOfGrabbingTools = 2;
+
+    //cut
+    void cut(Knife::Acut aNewCut); //error message suggested this after I typed it in without Knife:: I guess it lets me borrow types declared in another scope. Will delete if you thik its better tool
+    //open
+    void open();
+    //unscrew
+    void unscrew();
+};
 
 /*
 4)video mixer
@@ -228,6 +298,27 @@ struct CarWash //2)
     3)modify
  */
 
+struct VideoMixer
+{
+    //t bar position in %
+    float tBaPosition = 53.2f;
+    //faders
+    int numberOfFaders = 4;
+    //inputs
+    int numberOfOnputs = 4;
+    //effects
+    int numberOfEffects = 2;
+    //outputs
+    int numberOfOutputs = 2;
+
+    //mix
+    void mix(int input1, int input2);
+    //fade to black
+    void fadeToBlack(float duration = 50);
+    //modify
+    void modify();
+};
+
 /*
 5)oscillators
 5 properties:
@@ -241,6 +332,27 @@ struct CarWash //2)
     2)reset phase
     3)generate modulation
  */
+
+struct Oscillators
+{
+    //pitch
+    float pitch = 440;
+    //waveform
+    char waveform = '~';
+    //phase
+    float phase = 0;
+    //timbre
+    float timbre = 0;
+    //amplitude
+    float amplitude = 1;
+
+    //generate audio
+    float generateAudio(int oscNumber);
+    //reset phase
+    bool resetPhase();
+    //generate modulation
+    float generateModulation(int oscNumber);
+};
 
 /*
 6)wave shapers
@@ -256,6 +368,27 @@ struct CarWash //2)
     3)distort
  */
 
+struct WaveShapers
+{
+    //threshold
+    float threshold = 1;
+    //amount
+    float amount = 100.0f;
+    //offset
+    float offset = 0;
+    //feedback
+    float feedback = 0;
+    //control input
+    float controlInput = 0;
+
+    //twist
+    void twist();
+    //reshape
+    void reshape();
+    //distort
+    void distort();
+};
+
 /*
 7)filters
 5 properties:
@@ -270,6 +403,27 @@ struct CarWash //2)
     3)self oscillate
  */
 
+struct Filters
+{
+    //frequency
+    float frequency = 15000;
+    //resonance
+    float resonance = 0.7f;
+    //type
+    char type = 'L';
+    //caracter
+    int caracter = 1;
+    //drive
+    float drive = 1;
+
+    //remove frequencies
+    float removeFrequencies();
+    //ping
+    float ping(int inputNumber);
+    //self oscillate
+    float selfOscillate(float level = 1);
+};
+
 /*
 8)modulators
 5 properties:
@@ -277,12 +431,33 @@ struct CarWash //2)
     2)depth
     3)wave form
     4)phase
-    5)polarity type
+    5)unipolar
 3 things it can do:
     1)generate modulation
     2)make sounds interesting
     3)add groove
  */
+
+struct Modulators
+{
+    //rate
+    float rate = 0.01f;
+    //depth
+    float depth = 1;
+    //waveform
+    char waveform = '^';
+    //phase
+    float phase = 0;
+    //unipolar
+    bool unipolar = 0;
+
+    //generate modulation
+    float generateModulation();
+    //make sounds interesting
+    void makeSoundsInteresting();
+    //add groove
+    float addGroove (int time, int depth);
+};
 
 /*
 9)amplifiers
@@ -298,6 +473,35 @@ struct CarWash //2)
     3)color
  */
 
+struct Amplifiers
+{
+    //gain
+    float gain = 100;
+    //linearity
+    char linearity = ')';
+    //thd
+    float thd = 0.002f;
+    //class type
+    char classType = 'A';
+    //caracter
+    int caracter = 0;
+    
+    struct ColorType
+    {
+    int age;
+    float depth;
+
+    void createHarmonics(int harmonicType);
+    };
+
+    //amplify
+    float amplify(float incomingSignal);
+    //distort
+    float distort(float toneFrequency);
+    //color
+    float color(ColorType japaneseVintage);
+};
+
 /*
 10)synthesizer
 5 properties:
@@ -311,7 +515,20 @@ struct CarWash //2)
     2)pads
     3)drums
  */
-
+ 
+struct Synthesizer
+{
+    //oscillators
+    Oscillators osc1;
+    //WaveShapers
+    WaveShapers waveshaper1;
+    // filters
+    Filters filter1;
+    //modulators
+    Modulators lfo1;
+    //amplifiers
+    Amplifiers vca1;
+};
 #include <iostream>
 int main()
 {
