@@ -198,16 +198,16 @@ struct Knife
     //
     float price = 75;
     
-    struct Acut
+    struct Incision
     {
-    float cutDepth = 10;
-    float cutLength = 50;
+        float incisionDepth = 10;
+        float incisionLength = 50;
 
-    void hurt(int pain);
+        void hurt(int pain);
     };
 
     //cut
-    void cut(Acut prettyNastyCut);
+    void cut(Incision prettyNastyCut);
     //stab
     void stab();
     //unscrew
@@ -277,7 +277,7 @@ struct SwissArmyKnife
     int numberOfGrabbingTools = 2;
 
     //cut
-    void cut(Knife::Acut aNewCut); //error message suggested this after I typed it in without Knife:: I guess it lets me borrow types declared in another scope. Will delete if you thik its better tool
+    void cut(Knife::Incision aNewCut); //error message suggested this after I typed it in without Knife:: I guess it lets me borrow types declared in another scope. Will delete if you thik its better too
     //open
     void open();
     //unscrew
@@ -488,10 +488,10 @@ struct Amplifiers
     
     struct ColorType
     {
-    int age;
-    float depth;
+        int age;
+        float depth;
 
-    void createHarmonics(int harmonicType);
+        void createHarmonics(int harmonicType);
     };
 
     //amplify
