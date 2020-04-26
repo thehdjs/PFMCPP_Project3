@@ -124,12 +124,12 @@ void Knife::cut(Incision prettyNastyCut)
 
 void Knife::stab()
 {
-
+    Incision newIncision;
 }
 
 void Knife::unscrew()
 {
-
+    // Don't know what to put in here
 }
 
 struct Light
@@ -158,7 +158,9 @@ bool Light::turnOn()
 
 void Light::setTheMood()
 {
-
+    luminosity /= 3;
+    temperature = 1000;
+    electricalConsumption /= 2;
 }
 
 float Light::addedQuality()
@@ -194,12 +196,12 @@ void SwissArmyKnife::cut(Knife::Incision aNewCut)
 
 void SwissArmyKnife::open()
 {
-
+    // Don't know what to put in here
 }
 
 void SwissArmyKnife::unscrew()
 {
-
+    // Don't know what to put in here
 }
 
 struct VideoMixer
@@ -225,8 +227,8 @@ struct VideoMixer
 
 void VideoMixer::mix(int input1, int input2)
 {
-    input1 = 0;
-    input2 = 0;
+    input1 /= 2;
+    input2 /= 2;
 }
 
 void VideoMixer::fadeToBlack(float duration)
@@ -236,7 +238,7 @@ void VideoMixer::fadeToBlack(float duration)
 
 void VideoMixer::modify()
 {
-
+    // Don't know what to put in here
 }
 
 struct Oscillators
@@ -301,17 +303,18 @@ struct WaveShapers
 
 void WaveShapers::twist()
 {
-
+    threshold = 0.5f;
+    offset = 0.5f;
 }
 
 void WaveShapers::reshape()
 {
-
+    feedback = 1;
 }
 
 void WaveShapers::distort()
 {
-
+    offset = 0.99f;
 }
 
 struct Filters
@@ -381,6 +384,10 @@ float Modulators::generateModulation()
 
 void Modulators::makeSoundsInteresting()
 {
+    depth = 0.05f;
+    waveform = '*';
+    rate = 0.0001f;
+    unipolar = 0;
 
 }
 
