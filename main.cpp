@@ -1,3 +1,4 @@
+#include <iostream>
  /*
  Project 3 - Part 2 / 5
  Video: Chapter 2 Part 6
@@ -129,7 +130,7 @@ void Knife::stab()
 
 void Knife::unscrew()
 {
-    // Don't know what to put in here
+    std::cout << "pointiness: " << pointiness << "\n";
 }
 
 struct Light
@@ -196,18 +197,20 @@ void SwissArmyKnife::cut(Knife::Incision aNewCut)
 
 void SwissArmyKnife::open()
 {
-    // Don't know what to put in here
+    std::cout << "#/cutting tools: " << numberOfCuttingTools << "\n";
+    std::cout << "size: " << size << "\n";
 }
 
 void SwissArmyKnife::unscrew()
 {
-    // Don't know what to put in here
+    std::cout << "#/grabbing tools: " << numberOfGrabbingTools << "\n";
+    std::cout << "size: " << size << "\n";
 }
 
 struct VideoMixer
 {
     
-    float tBaPosition = 53.2f;
+    float tBarPosition = 53.2f;
    
     int numberOfFaders = 4;
     
@@ -238,7 +241,7 @@ void VideoMixer::fadeToBlack(float duration)
 
 void VideoMixer::modify()
 {
-    // Don't know what to put in here
+    std::cout << "modification: " << tBarPosition << "\n";
 }
 
 struct Oscillators
@@ -436,7 +439,6 @@ void Amplifiers::ColorType::createHarmonics(int harmonicType)
 float Amplifiers::amplify(float incomingSignal)
 {
     return incomingSignal*gain;
-    
 }
 
 float Amplifiers::distort(float toneFrequency)
@@ -486,7 +488,7 @@ float Synthesizer::makeDrums()
     return 0.89f;
 }
 
-#include <iostream>
+
 int main()
 {
     std::cout << "good to go!" << std::endl;
