@@ -126,6 +126,7 @@ void Knife::cut(Incision prettyNastyCut)
 void Knife::stab()
 {
     Incision newIncision;
+    newIncision.hurt(10);
 }
 
 void Knife::unscrew()
