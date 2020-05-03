@@ -85,10 +85,10 @@ send me a DM to check your pull request
  */
 
 
-struct Knife 
+struct Knife
 {
     
-    float pointiness = 0.85f; 
+    float pointiness = 0.85f;
  
     float sharpness = 0.3f;
 
@@ -100,10 +100,10 @@ struct Knife
     
     struct Incision
     {
-        float incisionDepth = 10;
-        float incisionLength = 50;
+        float depth = 10;
+        float length = 50;
 
-        void hurt(float pain);
+        float getHurtLevel();
     };
 
     void cut(Incision prettyNastyCut);
@@ -113,20 +113,20 @@ struct Knife
     void unscrew();
 };
 
-void Knife::Incision::hurt(float pain)
+float Knife::Incision::getHurtLevel()
 {
-    pain = incisionDepth + incisionLength;
+    return depth + length;
 }
 
 void Knife::cut(Incision prettyNastyCut)
 {
-    prettyNastyCut.hurt(1);
+    prettyNastyCut.getHurtLevel();
 }
 
 void Knife::stab()
 {
     Incision newIncision;
-    newIncision.hurt(10);
+    newIncision.getHurtLevel();
 }
 
 void Knife::unscrew()
@@ -184,7 +184,7 @@ struct SwissArmyKnife
     int numberOfGrabbingTools = 2;
 
    
-    void cut(Knife::Incision aNewCut); 
+    void cut(Knife::Incision aNewCut);
 
     void open();
    
@@ -193,7 +193,7 @@ struct SwissArmyKnife
 
 void SwissArmyKnife::cut(Knife::Incision aNewCut)
 {
-    aNewCut.hurt(1);
+    aNewCut.getHurtLevel();
 }
 
 void SwissArmyKnife::open()
@@ -392,7 +392,6 @@ void Modulators::makeSoundsInteresting()
     waveform = '*';
     rate = 0.0001f;
     unipolar = 0;
-
 }
 
 float Modulators::addGroove(int grooveTime, int grooveDepth)
@@ -439,7 +438,7 @@ void Amplifiers::ColorType::createHarmonics(int harmonicType)
 
 float Amplifiers::amplify(float incomingSignal)
 {
-    return incomingSignal*gain;
+    return incomingSignal * gain;
 }
 
 float Amplifiers::distort(float toneFrequency)
