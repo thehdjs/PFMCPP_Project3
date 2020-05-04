@@ -121,6 +121,7 @@ float Knife::Incision::getHurtLevel()
 void Knife::cut(Incision prettyNastyCut)
 {
     prettyNastyCut.getHurtLevel();
+    std::cout << "cut pain level: " << prettyNastyCut.getHurtLevel() << "\n";
 }
 
 void Knife::stab()
@@ -194,6 +195,7 @@ struct SwissArmyKnife
 void SwissArmyKnife::cut(Knife::Incision aNewCut)
 {
     aNewCut.getHurtLevel();
+    std::cout << "cut pain level: " << aNewCut.getHurtLevel() << "\n";
 }
 
 void SwissArmyKnife::open()
