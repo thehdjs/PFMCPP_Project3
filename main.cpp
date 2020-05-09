@@ -65,24 +65,18 @@ int main()
 
 struct Knife
 {
-    
-    float pointiness = 0.85f;
- 
-    float sharpness = 0.3f;
-
-    float thickness = 1.5f;
-
-    unsigned int length = 150;
-    
-    float price = 75;
-    
+    float pointiness, sharpness, thickness, price;
+    unsigned int length;
     struct Incision
     {
-        float depth = 10;
-        float length = 50;
+        float depth, length;
+        
+        Incision();
 
         float getHurtLevel();
     };
+
+    Knife();
 
     void cut(Incision prettyNastyCut);
   
@@ -91,11 +85,25 @@ struct Knife
     void unscrew();
 };
 
+Knife::Incision::Incision()
+{
+    depth = 10;
+    length = 50;
+}
+
 float Knife::Incision::getHurtLevel()
 {
     return depth + length;
 }
 
+Knife::Knife()
+{
+    pointiness = 0.85f;
+    sharpness = 0.3f;
+    thickness = 1.5f;
+    length = 150;
+    price = 75;
+}
 void Knife::cut(Incision prettyNastyCut)
 {
     prettyNastyCut.getHurtLevel();
@@ -115,15 +123,10 @@ void Knife::unscrew()
 
 struct Light
 {
-    int temperature = 2500;
-   
-    int luminosity = 1000;
-   
-    int electricalConsumption = 500;
-   
-    float size = 25.3f;
+    int temperature, luminosity, electricalConsumption;
+    float size, price;
 
-    float price = 1000;
+    Light();
 
     bool turnOn();
    
@@ -132,6 +135,14 @@ struct Light
     float addedQuality();
 };
 
+Light::Light()
+{
+    temperature = 2500;
+    luminosity = 1000;
+    electricalConsumption = 500;
+    size = 25.3f;
+    price = 1000;
+}
 bool Light::turnOn()
 {
     return true;
@@ -152,23 +163,26 @@ float Light::addedQuality()
 struct SwissArmyKnife
 {
    
-    float weight = 351.3f;
-   
-    float size = 100;
-    
-    float price = 59.99f;
-   
-    int numberOfCuttingTools = 3;
-   
-    int numberOfGrabbingTools = 2;
+    float weight, size, price;
+    int numberOfCuttingTools, numberOfGrabbingTools;
 
-   
+    SwissArmyKnife();
+
     void cut(Knife::Incision aNewCut);
 
     void open();
    
     void unscrew();
 };
+
+SwissArmyKnife::SwissArmyKnife()
+{
+    weight = 351.3f;
+    size = 100;
+    price = 59.99f;
+    numberOfCuttingTools = 3;
+    numberOfGrabbingTools = 2;
+}
 
 void SwissArmyKnife::cut(Knife::Incision aNewCut)
 {
@@ -190,24 +204,26 @@ void SwissArmyKnife::unscrew()
 
 struct VideoMixer
 {
-    
     float tBarPosition = 53.2f;
-   
-    int numberOfFaders = 4;
+    int numberOfFaders, numberOfOnputs, numberOfEffects, numberOfOutputs;
     
-    int numberOfOnputs = 4;
-   
-    int numberOfEffects = 2;
-   
-    int numberOfOutputs = 2;
+    VideoMixer();
 
-    
     void mix(int input1, int input2);
     
     void fadeToBlack(float duration = 50);
    
     void modify();
 };
+
+VideoMixer::VideoMixer()
+{
+    tBarPosition = 53.2f;
+    numberOfFaders = 4;
+    numberOfOnputs = 4;
+    numberOfEffects = 2;
+    numberOfOutputs = 2;
+}
 
 void VideoMixer::mix(int input1, int input2)
 {
@@ -227,24 +243,26 @@ void VideoMixer::modify()
 
 struct Oscillators
 {
-    
-    float pitch = 440;
-    
-    char waveform = '~';
-    
-    float phase = 0;
-    
-    float timbre = 0;
-    
-    float amplitude = 1;
+    char waveform;
+    float pitch, phase, timbre, amplitude;
 
-   
+    Oscillators();
+
     float generateAudio(int oscNumber);
     
     bool resetPhase();
     
     float generateModulation(int oscNumber);
 };
+
+Oscillators::Oscillators()
+{
+   pitch = 440;
+   waveform = '~';
+   phase = 0;
+   timbre = 0;
+   amplitude = 1; 
+}
 
 float Oscillators::generateAudio(int oscNumber)
 {
@@ -266,17 +284,9 @@ float Oscillators::generateModulation(int oscNumber)
 
 struct WaveShapers
 {
-    
-    float threshold = 1;
-   
-    float amount = 100.0f;
-    
-    float offset = 0;
-    
-    float feedback = 0;
-    
-    float controlInput = 0;
+    float threshold, amount, offset, feedback, controlInput;
 
+    WaveShapers();
     
     void twist();
     
@@ -284,6 +294,15 @@ struct WaveShapers
     
     void distort();
 };
+
+WaveShapers::WaveShapers()
+{
+    threshold = 1;
+    amount = 100.0f;
+    offset = 0;
+    feedback = 0;
+    controlInput = 0;
+}
 
 void WaveShapers::twist()
 {
@@ -303,26 +322,27 @@ void WaveShapers::distort()
 
 struct Filters
 {
-    
-    float frequency = 15000;
-    
-    float resonance = 0.7f;
-    
-    char type = 'L';
-    
-    int caracter = 1;
-    
-    float drive = 1;
+    float frequency, resonance, drive;
+    char type;
+    int caracter;
 
+    Filters();
     
     float removeFrequencies();
    
     float ping(int inputNumber);
 
-
     float selfOscillate(float level = 1);
 };
 
+Filters::Filters()
+{
+    frequency = 15000;
+    resonance = 0.7f;
+    type = 'L';
+    caracter = 1;
+    drive = 1;
+}
 float Filters::removeFrequencies()
 {
     return 0.89f;
@@ -342,17 +362,11 @@ float Filters::selfOscillate(float level)
 
 struct Modulators
 {
-   
-    float rate = 0.01f;
-   
-    float depth = 1;
-   
-    char waveform = '^';
-   
-    float phase = 0;
-    
-    bool unipolar = 0;
+    float rate, depth, phase;
+    char waveform;
+    bool unipolar;
 
+    Modulators();
 
     float generateModulation();
     
@@ -360,6 +374,15 @@ struct Modulators
 
     float addGroove (int grooveTime, int grooveDepth);
 };
+
+Modulators::Modulators()
+{
+    rate = 0.01f;
+    depth = 1;
+    waveform = '^';
+    phase = 0;
+    unipolar = 0;
+}
 
 float Modulators::generateModulation()
 {
@@ -383,15 +406,8 @@ float Modulators::addGroove(int grooveTime, int grooveDepth)
 
 struct Amplifiers
 {
-    
-    float gain = 100;
-    
-    char linearity = ')';
-   
-    float thd = 0.002f;
-   
-    char classType = 'A';
-    
+    float gain, thd;
+    char linearity, classType;
     int caracter = 0;
     
     struct ColorType
@@ -399,17 +415,34 @@ struct Amplifiers
         int age;
         float depth;
 
+        ColorType();
+
         void createHarmonics(int harmonicType);
     };
 
-   
-    
+    Amplifiers();
+
     float amplify(float incomingSignal);
   
     float distort(float toneFrequency);
    
     float color(ColorType japaneseVintage);
 };
+
+Amplifiers::ColorType::ColorType()
+{
+    age = 40;
+    depth = 0;
+}
+
+Amplifiers::Amplifiers()
+{
+   gain = 100;
+   linearity = ')';
+   thd = 0.002f;
+   classType = 'A';
+   caracter = 0;
+}
 
 void Amplifiers::ColorType::createHarmonics(int harmonicType)
     {
@@ -472,5 +505,51 @@ float Synthesizer::makeDrums()
 int main()
 {
     Example::main();
+
+    Knife machete;
+    Knife::Incision prettyNastyCut;
+    
+    std::cout << "machete ";
+    
+    machete.cut(prettyNastyCut);
+    
+    Light LEDpanel;
+
+    std::cout << "Price of LEDpanel: " << LEDpanel.price << "\n";
+
+    SwissArmyKnife vic;
+    Knife::Incision aNewCut;
+
+    std::cout << "vic ";
+    vic.cut(aNewCut);
+    
+    VideoMixer forA;
+    
+    std::cout << "ForA video ";
+    forA.modify();
+    
+    Oscillators vco;
+
+    std::cout << "vco waveform: " << vco.waveform << "\n";
+
+    WaveShapers ws;
+
+    std::cout << "ws threshold: " << ws.threshold << "\n";
+
+    Filters vcf;
+    
+    std::cout << "vcf self oscillation level: " << vcf.selfOscillate() << "\n";
+
+    Modulators env;
+    float addedGroove;
+
+    addedGroove = env.addGroove(2, 7);
+
+    std::cout << "groove added to env: " << addedGroove << "\n";
+
+    Amplifiers vca;
+    Synthesizer serge;
+    std::cout << "Drums level: " << serge.makeDrums() << "\n";
+
     std::cout << "good to go!" << std::endl;
 }
