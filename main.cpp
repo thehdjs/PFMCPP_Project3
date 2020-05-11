@@ -345,6 +345,7 @@ Filters::Filters()
 }
 float Filters::removeFrequencies()
 {
+    std::cout << "frequencies are being removed" << "\n";
     return 0.89f;
 }
 
@@ -386,6 +387,7 @@ Modulators::Modulators()
 
 float Modulators::generateModulation()
 {
+    std::cout << "modulation is happening" << "\n";
     return 0.89f;
 }
 
@@ -540,12 +542,16 @@ int main()
     
     std::cout << "vcf self oscillation level: " << vcf.selfOscillate() << "\n";
 
+    vcf.removeFrequencies();
+
     Modulators env;
     float addedGroove;
 
     addedGroove = env.addGroove(2, 7);
 
     std::cout << "groove added to env: " << addedGroove << "\n";
+
+    env.generateModulation();
 
     Amplifiers vca;
     Synthesizer serge;
