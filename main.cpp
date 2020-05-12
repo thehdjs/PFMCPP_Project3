@@ -72,14 +72,14 @@ float Knife::Incision::getHurtLevel()
     return depth + length;
 }
 
-Knife::Knife()
-{
-    pointiness = 0.85f;
-    sharpness = 0.3f;
-    thickness = 1.5f;
-    length = 150;
-    price = 75;
-}
+Knife::Knife() :
+pointiness {0.85f},
+sharpness {0.3f},
+thickness {1.5f},
+price {75},
+length {150}
+{}
+
 void Knife::cut(Incision prettyNastyCut)
 {
     prettyNastyCut.getHurtLevel();
@@ -90,6 +90,7 @@ void Knife::stab()
 {
     Incision newIncision;
     newIncision.getHurtLevel();
+    std::cout << "pointiness and sharpness respectively: " << pointiness << ", " << sharpness << "\n"; 
 }
 
 void Knife::unscrew()
@@ -99,7 +100,9 @@ void Knife::unscrew()
 
 struct Light
 {
-    int temperature, luminosity, electricalConsumption;
+    int temperature = 2500;
+    int luminosity {1000};
+    int electricalConsumption {500};
     float size, price;
 
     Light();
@@ -113,9 +116,6 @@ struct Light
 
 Light::Light()
 {
-    temperature = 2500;
-    luminosity = 1000;
-    electricalConsumption = 500;
     size = 25.3f;
     price = 1000;
 }
@@ -151,14 +151,13 @@ struct SwissArmyKnife
     void unscrew();
 };
 
-SwissArmyKnife::SwissArmyKnife()
-{
-    weight = 351.3f;
-    size = 100;
-    price = 59.99f;
-    numberOfCuttingTools = 3;
-    numberOfGrabbingTools = 2;
-}
+SwissArmyKnife::SwissArmyKnife() : 
+weight (351.3f),
+size (100),
+price (59.99f),
+numberOfCuttingTools (3),
+numberOfGrabbingTools (2)
+{}
 
 void SwissArmyKnife::cut(Knife::Incision aNewCut)
 {
@@ -490,6 +489,8 @@ int main()
     std::cout << "machete ";
     
     machete.cut(prettyNastyCut);
+
+    machete.stab();
     
     Light LEDpanel;
 
