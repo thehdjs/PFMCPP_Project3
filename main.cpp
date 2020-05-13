@@ -139,6 +139,8 @@ struct Light
     void setTheMood();
 
     float addedQuality();
+
+    float fade(float intensity);
 };
 
 Light::Light()
@@ -161,6 +163,21 @@ void Light::setTheMood()
 float Light::addedQuality()
 {
     return 50.5f;
+}
+
+float Light::fade(float intensity)
+{
+    while (luminosity < intensity)
+    {
+        luminosity ++;
+        std::cout << "incrementing luminosity\ncurrent level: " << luminosity << " target: " << intensity << "\n";
+        if (luminosity >= intensity) 
+        {
+            std::cout << "fade finished\n";
+            return 100;
+        }   
+    }
+    return luminosity;
 }
 
 struct SwissArmyKnife
@@ -522,6 +539,8 @@ int main()
     Light LEDpanel;
 
     std::cout << "Price of LEDpanel: " << LEDpanel.price << "\n";
+
+    LEDpanel.fade(1003);
 
     SwissArmyKnife vic;
     Knife::Incision aNewCut;
